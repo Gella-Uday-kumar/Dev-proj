@@ -3,14 +3,17 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
 
-    steps:
+    defaults:
+      run:
+        working-directory: demo
 
+    steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
